@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import './App.css';
-import Downshift from 'downshift' ;//library for autocomplete dropdown
-import ListOfTags from './ListOfTags.js'; // functional component that renders the tag list
+import Downshift from 'downshift' ;//Library for autocomplete dropdown
+import ListOfTags from './ListOfTags.js'; // Functional component that renders the tag list
 
 
 // options for autoselect dropdown
@@ -18,37 +18,37 @@ class App extends Component {
 
   constructor(props) {
     super(props);
-    this.state = {tags: []}; //store new tags in state
+    this.state = {tags: []}; //Store new tags in state
   }
 
   renderList(tags){
     return ( 
-      <ListOfTags tags = {tags} /> // renders list of tag
+      <ListOfTags tags = {tags} /> // Renders list of tags
     );
   }
 
-  //function that adds tag from dropdown to state, this adds hash tag to the list  
+  //Function that adds tag from dropdown to state, this adds a hashtag to the list  
   handleSelect(x) {
     let newTag = x.value
 
-    if ( (newTag).slice(0,1) !== '#'){ // check if the input has a hashtag at the beginning
+    if ( (newTag).slice(0,1) !== '#'){ // Check if the input has a hash at the beginning
       newTag = `#${x.value}`
      
     }
     this.setState({
-      tags: [...this.state.tags, newTag] //adds new hashstag to state
+      tags: [...this.state.tags, newTag] //Adds new hashstag to state
     } )
 
   }
 
   render() {
     return (
-      //Autocoplert component
+      //Autocomplete component
       <Downshift
      
       selectedItem={(this.state.tags).slice(-1)[0]}
       onChange={selection => 
-        this.handleSelect(selection)} //adds tags from the dropdown list
+        this.handleSelect(selection)} //Adds tags from the dropdown list
       itemToString={item => (item ? item.value : '')}
     >
       {({
@@ -64,15 +64,15 @@ class App extends Component {
          <div class="one">
           <input {...getInputProps({ //Input for the hash tag
             type:'text',
-             onKeyDown: e => { //allows you to enter your own hashtags
+             onKeyDown: e => { //Allows you to enter your own hashtags
               if (e.key === 'Enter') {
                 e.preventDefault()
                 let newTag = inputValue
-              if ( (inputValue).slice(0,1) !== '#'){ // check if you added a hash tag
+              if ( (inputValue).slice(0,1) !== '#'){ // Checks if input was a hash tag
                 newTag = `#${inputValue}`  
               }
               this.setState({
-                tags: [...this.state.tags, newTag] // adds hashtag to state
+                tags: [...this.state.tags, newTag] // Adds hashtag to state
               },function () {
                 console.log(this.state.tags);
                 
