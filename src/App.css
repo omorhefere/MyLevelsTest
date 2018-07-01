@@ -1,0 +1,61 @@
+.container {
+  width: 100%;
+  height: 100%;
+}
+.one { /*Styling for the input div */ 
+  width: 50%;
+  margin-left: 37.5%;
+
+
+}
+.two { /* Styling for the tag div */ 
+ position: absolute;
+ margin-top: 10%;
+ margin-left: 39.5%;
+ width: 20%;
+}
+h1{ 
+  margin-left: 36.5%;
+}
+
+input { /* Styling for the Tag input */ 
+  border-radius: 5px;
+  width: 47.5%;
+  height: 20%;
+  font-size: 35px
+
+}
+input[type="text"]
+{
+    padding-left: 15px
+}
+input:focus {
+  outline:none
+}
+.tags { /* Styling for the list of tags */ 
+    
+    font-size: 20px;
+    margin-top: 5%;
+    background-color: white;
+    width : 100%;
+    padding: 10px;
+    border: 1px solid #bbb;
+   
+}
+span{
+  margin-left: 15%;
+}
+.autocomplete{   /* Styling for autocomplete dropdown*/ 
+  width:25.25%;
+  margin-left: 37.5%;
+  
+  font-size: 25px
+}
+.suggestions{ /* Styling for individual tags  */ 
+  padding-left: 15px
+}
+
+
+
+
+
